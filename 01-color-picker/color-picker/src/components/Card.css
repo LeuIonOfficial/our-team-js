@@ -1,6 +1,6 @@
 .container {
     width: 100%;
-    height: 600px;
+    height: 1000px;
     position: relative;
 }
 
@@ -20,5 +20,16 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    border-radius: 2px;
 
+}
+
+li {
+    list-style: none;
+}
+
+.text__inside {
+    display: flex;
+    justify-content: space-around;
+    padding: 2px;
 }
