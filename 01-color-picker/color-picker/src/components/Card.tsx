@@ -1,13 +1,25 @@
 import ColorPicker from "./ColorPicker";
 import { FC, useState } from 'react';
 import './Card.css'
+import axios from "axios";
+
 
 
 const Card: FC = () => {
+
+  const currentDate: Date = new Date()
+  const localTime: string = currentDate.toLocaleTimeString();
+
+  const data: {localTime: string} = {
+    localTime: localTime,
+  };
+
+  const jsonData: string = JSON.stringify(data)
+  console.log(jsonData);
+  
+  axios.post('/api', jsonData).then(response => {console.log(response)})
   
   const [color, setColor] = useState('#ff0000')
-  
-
   const handleColorChange = (newColor: string) => {
     setColor(newColor)
   }
@@ -17,7 +29,6 @@ const Card: FC = () => {
   const blue: number = parseInt(color.substring(5, 7), 16);
 
   const rgb: number[] = [red, green, blue];
-  console.log(rgb);
   
 
   const backgroundStyle = {
@@ -42,7 +53,6 @@ const Card: FC = () => {
               <li>radial-gradient(at bottom left, hsl({rgb[2]}, 50%, 35%), transparent)</li>
               <li>radial-gradient(at bottom right, hsl({rgb[0]}, 50%, 35%), transparent)</li>
             </ul>
-            
         </div>
       </div>
     </div>
