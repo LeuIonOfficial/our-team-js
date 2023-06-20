@@ -12,7 +12,7 @@ const Card: FC = () => {
 
   const handleCheckboxChange = () => {
       setIsChecked(!isChecked);
-        };
+    };
 
   const handleColorChange = (newColor: string) => {
       setColor(newColor)
@@ -30,10 +30,6 @@ const Card: FC = () => {
   
   axios.post('/api', jsonData).then(response => {console.log(response)})
   
-  const [color, setColor] = useState('#ff0000')
-  const handleColorChange = (newColor: string) => {
-    setColor(newColor)
-  }
 
    const red: number = parseInt(color.substring(1, 3), 16);
    const green: number = parseInt(color.substring(3, 5), 16);
@@ -83,14 +79,14 @@ const Card: FC = () => {
                           // data-off="No"
 
                     />
-
                     {isChecked ? 'On' : 'Off'}
                 </label>
 
             </div>
           </div>
-  };
+          </div>
+  )};
   
-  export default Card;
+export default Card;
 
 
