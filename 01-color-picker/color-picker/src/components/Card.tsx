@@ -7,15 +7,11 @@ const Card: FC = () => {
 
   const [color, setColor] = useState('#ff0000')
 
-
-
         const [isChecked, setIsChecked] = useState(false)
 
         const handleCheckboxChange = () => {
             setIsChecked(!isChecked);
         };
-
-
 
     const handleColorChange = (newColor: string) => {
       setColor(newColor)
@@ -39,7 +35,7 @@ const Card: FC = () => {
     const cardStyle = {
         background: isChecked ? 'gray' : 'white',
         color: isChecked ? 'white' : "black"
-    };
+};
 
     return (
         <div className="container" style={backgroundStyle}>
@@ -65,7 +61,13 @@ const Card: FC = () => {
                     className="react-switch-label"
                     htmlFor={`react-switch-new`}
                 >
-                    <span className={`react-switch-button`} />
+                    <span className={`react-switch-button`}
+                          // data-on="Yes"
+                          // data-off="No"
+
+                    />
+
+                    {isChecked ? 'On' : 'Off'}
                 </label>
 
             </div>
