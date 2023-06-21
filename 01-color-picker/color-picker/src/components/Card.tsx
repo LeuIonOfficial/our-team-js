@@ -82,15 +82,21 @@ const Card: FC = () => {
 };
 
 
-
-
-
-
     return (
         <div className="container" style={backgroundStyle}>
           <div className="angular-gradient"  style={cardStyle}>
               <div className={"heading-group"}>
                   <h2>Tetradic radial-background gradient</h2>
+
+                  <button
+                      className={"generate-theme"}
+                      type={"submit"}
+                      style={cardStyle}
+                      checked={isChecked}
+                  >
+                      Generate Theme
+                  </button>
+
                   <div>
 
                       <input

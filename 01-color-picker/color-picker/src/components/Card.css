@@ -80,3 +80,9 @@ li {
     margin: 0 20px;
     align-items: center;
 }
+.generate-theme{
+    width: 90px;
+    height: 30px;
+    margin-left: 4px;
+    margin-top: 3px;
+}
