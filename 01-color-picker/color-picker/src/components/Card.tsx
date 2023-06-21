@@ -43,10 +43,7 @@ const Card: FC = () => {
         background: isChecked ? '#141414' : 'white',
         color: isChecked ? 'white' : "black"
 };
-    const buttonStyle = {
-        background: isChecked? "#141414" : 'white',
-        color: isChecked ? 'white' : "black"
-    }
+
 
     return (
         <div className="container" style={backgroundStyle}>
@@ -57,11 +54,12 @@ const Card: FC = () => {
                   <button
                       className={"generate-theme"}
                       type={"submit"}
-                      style={buttonStyle}
+                      style={cardStyle}
                       checked={isChecked}
                   >
                       Generate Theme
                   </button>
+
                   <div>
 
                       <input
