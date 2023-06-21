@@ -43,12 +43,25 @@ const Card: FC = () => {
         background: isChecked ? '#141414' : 'white',
         color: isChecked ? 'white' : "black"
 };
+    const buttonStyle = {
+        background: isChecked? "#141414" : 'white',
+        color: isChecked ? 'white' : "black"
+    }
 
     return (
         <div className="container" style={backgroundStyle}>
           <div className="angular-gradient"  style={cardStyle}>
               <div className={"heading-group"}>
                   <h2>Tetradic radial-background gradient</h2>
+
+                  <button
+                      className={"generate-theme"}
+                      type={"submit"}
+                      style={buttonStyle}
+                      checked={isChecked}
+                  >
+                      Generate Theme
+                  </button>
                   <div>
 
                       <input
