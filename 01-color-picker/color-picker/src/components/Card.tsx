@@ -17,18 +17,12 @@ const Card: FC = () => {
   const handleColorChange = (newColor: string) => {
       setColor(newColor)
     }
-    
-  const currentDate: Date = new Date()
-  const localTime: string = currentDate.toLocaleTimeString();
 
-  const data: {localTime: string} = {
-    localTime: localTime,
-  };
+  // backend request
+      
+  axios.get('http://localhost:5000').then(response => {console.log(response.data)})
 
-  const jsonData: string = JSON.stringify(data)
-  console.log(jsonData);
-  
-  axios.post('/api', jsonData).then(response => {console.log(response)})
+  // --------
   
 
    const red: number = parseInt(color.substring(1, 3), 16);
