@@ -72,3 +72,11 @@ li {
     left: calc(100% - 2px);
     transform: translateX(-100%);
 }
+.heading-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 20px;
+    align-items: center;
+}

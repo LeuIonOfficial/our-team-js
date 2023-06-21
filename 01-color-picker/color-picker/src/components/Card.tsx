@@ -40,14 +40,38 @@ const Card: FC = () => {
     };
 
     const cardStyle = {
-        background: isChecked ? 'gray' : 'white',
+        background: isChecked ? '#141414' : 'white',
         color: isChecked ? 'white' : "black"
 };
 
     return (
         <div className="container" style={backgroundStyle}>
           <div className="angular-gradient"  style={cardStyle}>
-            <h2>Tetradic radial-background gradient</h2>
+              <div className={"heading-group"}>
+                  <h2>Tetradic radial-background gradient</h2>
+                  <div>
+
+                      <input
+                          // className="react-switch-checkbox"
+                          id={`react-switch-new`}
+                          type="checkbox"
+                          checked={isChecked}
+                          onChange={handleCheckboxChange}
+                      />
+                      <label
+                          // className="react-switch-label"
+                          htmlFor={`react-switch-new`}
+                      >
+                    <span className={`react-switch-button`}
+                        // data-on="Yes"
+                        // data-off="No"
+
+                    />
+                          {isChecked ? 'On' : 'Off'}
+                      </label>
+                  </div>
+              </div>
+
             <ColorPicker onColorChange={handleColorChange}/>
             <div className='text__inside'>
               <span>background: </span>
@@ -57,24 +81,6 @@ const Card: FC = () => {
                 <li>radial-gradient(at bottom left, hsl({rgb[2]}, 50%, 35%), transparent)</li>
                 <li>radial-gradient(at bottom right, hsl({rgb[0]}, 50%, 35%), transparent)</li>
               </ul>
-                <input
-                    className="react-switch-checkbox"
-                    id={`react-switch-new`}
-                    type="checkbox"
-                    checked={isChecked}
-                    onChange={handleCheckboxChange}
-                />
-                <label
-                    className="react-switch-label"
-                    htmlFor={`react-switch-new`}
-                >
-                    <span className={`react-switch-button`}
-                          // data-on="Yes"
-                          // data-off="No"
-
-                    />
-                    {isChecked ? 'On' : 'Off'}
-                </label>
 
             </div>
           </div>
