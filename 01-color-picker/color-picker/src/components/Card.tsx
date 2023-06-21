@@ -57,25 +57,25 @@ const Card: FC = () => {
                   <h2>Tetradic radial-background gradient</h2>
                   <div>
 
-                  <input
-                      // className="react-switch-checkbox"
-                      id={`react-switch-new`}
-                      type="checkbox"
-                      checked={isChecked}
-                      onChange={handleCheckboxChange}
-                  />
-                  <label
-                      // className="react-switch-label"
-                      htmlFor={`react-switch-new`}
-                  >
+                      <input
+                          // className="react-switch-checkbox"
+                          id={`react-switch-new`}
+                          type="checkbox"
+                          checked={isChecked}
+                          onChange={handleCheckboxChange}
+                      />
+                      <label
+                          // className="react-switch-label"
+                          htmlFor={`react-switch-new`}
+                      >
                     <span className={`react-switch-button`}
                         // data-on="Yes"
                         // data-off="No"
 
                     />
-                      {isChecked ? 'On' : 'Off'}
-                  </label>
-              </div>
+                          {isChecked ? 'On' : 'Off'}
+                      </label>
+                  </div>
               </div>
 
             <ColorPicker onColorChange={handleColorChange}/>
