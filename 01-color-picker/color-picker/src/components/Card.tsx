@@ -50,7 +50,7 @@ const Card: FC = () => {
 
     useEffect(() => {
         axios.get('http://localhost:4000').then(response => {
-            console.log(typeof response.data);
+            console.log(response.data);
             generateTheme(response.data)
         });
     }, []);
@@ -77,7 +77,7 @@ const Card: FC = () => {
     };
 
     const handleGenerateTheme = () => {
-        theme < 5 ? setIsChecked(true) : setIsChecked(false)
+        theme > 5 ? setIsChecked(true) : setIsChecked(false)
     }
 
     return (
@@ -92,7 +92,7 @@ const Card: FC = () => {
                       Generate Theme
                   </button>
 
-                  <div>
+                  <div className="check-box">
                       <label className={"switch"}>
                           <input type="checkbox"
                                  checked={isChecked}
@@ -102,11 +102,9 @@ const Card: FC = () => {
 
                           <span className={"slider"}></span>
                       </label>
-                      {isChecked ? 'On' : 'Off'}
-
+                      <span>{isChecked ? 'On' : 'Off'}</span>
                   </div>
               </div>
-
             <ColorPicker onColorChange={handleColorChange}/>
             <div className='text__inside'>
                 <span>background: </span>
@@ -116,7 +114,6 @@ const Card: FC = () => {
                     <li>radial-gradient(at bottom left, {calculateHSL(blue, red, green)}, transparent)</li>
                     <li>radial-gradient(at bottom right, {calculateHSL(red, green, blue)}, transparent)</li>
                 </ul>
-
             </div>
           </div>
           </div>
