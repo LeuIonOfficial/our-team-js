@@ -21,7 +21,16 @@
     justify-content: space-around;
     align-items: center;
     border-radius: 10px;
-
+}
+  
+.dark {
+    background: #141414;
+    color: white;
+}
+  
+.light {
+    background: white;
+    color: #141414;
 }
 
 li {
@@ -85,3 +94,4 @@ input:checked + .slider:before {
     transform: translateX(26px);
     background-color: black;
 }
+

@@ -1,20 +1,13 @@
 import ColorPicker from "./ColorPicker";
-import { FC, useState } from 'react';
+import { FC, useState, useEffect } from 'react';
 import './Card.css'
 import axios from "axios";
-
-
 
 const Card: FC = () => {
   
   const [color, setColor] = useState('#ff0000')
   const [isChecked, setIsChecked] = useState(false)
-
-  const handleCheckboxChange = () => {
-      setIsChecked(!isChecked);
-    };
-
-
+  const [theme, generateTheme] = useState(10)
     const calculateHSL = (red_color: number, green_color: number, blue_color: number) => {
         red_color /= 255;
         green_color /= 255;
@@ -49,17 +42,20 @@ const Card: FC = () => {
         }
 
     }
-        const handleColorChange = (newColor: string) => {
+    const handleColorChange = (newColor: string) => {
          setColor(newColor)
     }
 
   // backend request
-      
-  axios.get('http://localhost:5000').then(response => {console.log(response.data)})
+
+    useEffect(() => {
+        axios.get('http://localhost:4000').then(response => {
+            console.log(typeof response.data);
+            generateTheme(response.data)
+        });
+    }, []);
 
   // --------
-  
-
    const red: number = parseInt(color.substring(1, 3), 16);
    const green: number = parseInt(color.substring(3, 5), 16);
    const blue: number = parseInt(color.substring(5, 7), 16);
@@ -76,22 +72,22 @@ const Card: FC = () => {
         };
 
 
-    const cardStyle = {
-        background: isChecked ? '#141414' : 'white',
-        color: isChecked ? 'white' : "black"
-};
+    const handleCheckboxChange = () => {
+        setIsChecked(!isChecked);
+    };
+
+    const handleGenerateTheme = () => {
+        theme < 5 ? setIsChecked(true) : setIsChecked(false)
+    }
 
     return (
         <div className="container" style={backgroundStyle}>
-          <div className="angular-gradient"  style={cardStyle}>
+          <div className={`angular-gradient ${isChecked ? 'dark' : 'light'}`}>
               <div className={"heading-group"}>
                   <h2>Tetradic radial-background gradient</h2>
-
                   <button
-                      className={"generate-theme"}
-                      type={"submit"}
-                      style={cardStyle}
-                      checked={isChecked}
+                      className={`generate-theme ${isChecked ? 'dark' : 'light'}`}
+                      onClick={handleGenerateTheme}
                   >
                       Generate Theme
                   </button>
