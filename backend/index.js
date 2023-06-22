@@ -1,10 +1,13 @@
 const express = require('express')
+const cors = require('cors')
 
 const app = express();
-const PORT = 5000;
+app.use(cors())
+
+const PORT = 4000;
 const dateTime = new Date();
 const hour = dateTime.getHours();
 console.log(typeof hour);
-app.get("/", (req, res) => res.send(hour < 6 ? false : hour > 20 ? false : true));
+app.get("/", (req, res) => res.send(hour.toString()));
 
 app.listen(PORT, () => console.log(`Server is running on port: http://localhost:${PORT}`));
