@@ -81,7 +81,6 @@ const Card: FC = () => {
         color: isChecked ? 'white' : "black"
 };
 
-
     return (
         <div className="container" style={backgroundStyle}>
           <div className="angular-gradient"  style={cardStyle}>
@@ -98,25 +97,17 @@ const Card: FC = () => {
                   </button>
 
                   <div>
-
-                      <input
-                          // className="react-switch-checkbox"
-                          id={`react-switch-new`}
-                          type="checkbox"
-                          checked={isChecked}
+                      <label className={"switch"}>
+                          <input type="checkbox"
+                                 checked={isChecked}
+                                 className={"dark"}
                           onChange={handleCheckboxChange}
-                      />
-                      <label
-                          // className="react-switch-label"
-                          htmlFor={`react-switch-new`}
-                      >
-                    <span className={`react-switch-button`}
-                        // data-on="Yes"
-                        // data-off="No"
+                          />
 
-                    />
-                          {isChecked ? 'On' : 'Off'}
+                          <span className={"slider"}></span>
                       </label>
+                      {isChecked ? 'On' : 'Off'}
+
                   </div>
               </div>
 
