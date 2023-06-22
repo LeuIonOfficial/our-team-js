@@ -24,13 +24,13 @@
 }
   
 .dark {
-    background: #141414;
+    background: #121212;
     color: white;
 }
   
 .light {
     background: white;
-    color: #141414;
+    color: #121212;
 }
 
 li {
@@ -93,5 +93,16 @@ input:checked + .slider {
 input:checked + .slider:before {
     transform: translateX(26px);
     background-color: black;
+}
+
+.check-box {
+    display: flex;
+    align-items: center;
+}
+
+.check-box > span {
+    margin-left: 20px;
+    font-size: larger;
+    font-weight: bold;
 }
 

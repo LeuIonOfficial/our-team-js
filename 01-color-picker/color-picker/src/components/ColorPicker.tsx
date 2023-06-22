@@ -7,8 +7,6 @@ interface ColorPickerProps {
 const ColorPicker: FC<ColorPickerProps> = ({ onColorChange }) => {
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         onColorChange(event.target.value);
-        console.log(event)
-        
     };
 
     return (
