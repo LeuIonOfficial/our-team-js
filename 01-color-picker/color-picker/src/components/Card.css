@@ -21,7 +21,16 @@
     justify-content: space-around;
     align-items: center;
     border-radius: 2px;
+}
 
+.dark {
+    background: #141414;
+    color: white;
+}
+
+.light {
+    background: white;
+    color: #141414;
 }
 
 li {
@@ -83,6 +92,6 @@ li {
 .generate-theme{
     width: 90px;
     height: 30px;
-    margin-left: 4px;
-    margin-top: 3px;
+    margin: 4px;
 }
+
