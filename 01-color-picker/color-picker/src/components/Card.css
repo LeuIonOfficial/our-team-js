@@ -15,12 +15,13 @@
     left: 30%;
     background-color: #fff;
     width: 700px;
-    height: 300px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     border-radius: 10px;
+    font-size: 18px;
 }
   
 .dark {
@@ -101,8 +102,8 @@ input:checked + .slider:before {
 }
 
 .check-box > span {
-    margin-left: 20px;
-    font-size: larger;
+    margin-left: 10px;
+    font-size: 18px;
     font-weight: bold;
 }
 
