@@ -77,7 +77,7 @@ const Card: FC = () => {
     };
 
     const handleGenerateTheme = () => {
-        theme > 5 ? setIsChecked(true) : setIsChecked(false)
+        theme > 8 && theme < 20 ? setIsChecked(false) : setIsChecked(true)
     }
 
     return (
